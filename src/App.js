@@ -1,94 +1,47 @@
 import React from 'react';
 import './App.css';
-
-let movies = [
-  {
-    "title":"Pulp Fiction",
-    "date":"2004",
-    "genreid": 0
-  },
-  {
-    "title":"Bohemian Rapsody",
-    "date":"2003",
-    "genreid": 2
-  },
-  {
-    "title":"Bill: Vol 2",
-    "date":"1994",
-    "genreid":3
-  },
-  {
-    "title":"Avangers, War of Infinity",
-    "date":"2004",
-    "genreid": 1
-  },
-  {
-    "title":"Inception",
-    "date":"2003",
-    "genreid": 1
-  },
-  {
-    "title":"Reservoir dogs",
-    "date":"1994",
-    "genreid": 3
-  },
-];
-
-let genres = [
-  {
-    "name" : "ALL",
-    "id": 0
-  },
-  {
-    "name" : "Action & Adventure",
-    "id": 1
-  },
-  {
-    "name" : "Drama, Biography, Music",
-    "id": 2
-  },
-  {
-    "name" : "Oscar winning Movie",
-    "id": 3
-  }
-];
-
-let sortBy = ["RELEASE DATE", "TITLE", "GENRE"];
+import {genres, movies, sortBy} from './data.js';
+import img from './img/1.svg';
 
 const MoviesMain = (props) =>
 (
   <>
   <Filters genres={props.genres} />
   <Counter count={props.movies.length} />
-  <MoviesPalette movies={props.movies}/>
+  <MoviesPalette movies={props.movies} genres={props.genres}/>
   </>
 );
 
 const Filters = (props) => 
 (
   <>
-    {props.genres.map(g => (<div>{g.name}</div>))}
+    {props.genres.map(g => (<button className="genreButton">{g.name}</button>))}
   </>
 );
 
 const Counter = (props) => 
 (
-    <div>{props.count} movies found</div> 
+    <div><b>{props.count}</b> movies found</div> 
 );
 
 const MoviesPalette = (props) => 
 (
-  <>
-    {props.movies.map(m => (<MovieCard movie={m} />))}
-  </>
+  <div className="flex-container">
+      {props.movies.map(m => (<MovieCard movie={m} genre={props.genres[m.genreid]} />))}
+  </div>
 );
 
 const MovieCard = (props) => 
 (
-  <div>
-    <div>{props.movie.title}</div>
-    <div>{props.movie.date}</div>
-    <div>{props.movie.genre}</div>
+  <div className="card">
+    <img src={img}/>
+    <div className="flex-container">
+      <div>
+        <div>{props.movie.title}</div>
+        <div>{props.movie.date}</div>
+      </div>
+      <div className="test">{props.genre.name}</div>
+    </div>
   </div>
 )
 
