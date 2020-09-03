@@ -1,27 +1,75 @@
 .genreButton {     
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;        
+    color: #FFFFFF;
+    font-size: 20px;
   }
   
   .flex-container{
     display: flex;
     flex-wrap: wrap;
   }
-  
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-    padding: 10px;
-    background-color: #ffffff;
+
+  .moviesPalette{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  
+
+  .card {
+    flex:33%;
+    max-width: 320px;
+    padding-bottom: 30px;    
+  }
+
   .genre{
-    margin-left:auto;
+    margin-left: auto;
   }
   
   .sorting{
-    margin-left:auto;
+    margin-left: auto;
+  }
+
+  .moviesMain{
+    background-color: #232323;
+    display: flex; 
+    justify-content: center;
+  }
+
+  .moviesMainContent{
+      width: 90%;
+  }
+
+  .counter{
+      font-size: 20px;
+      padding: 20px 0 20px 0;
+  }
+
+  .filters{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    padding-top: 15px;
+  }
+
+  select {
+    border: 0px;
+    background: transparent;
+    color: #FFFFFF;
+    color: inherit;
+    font: inherit;
+  }
+
+  select option
+  {
+    background: #232323;
+    border: 0px; 
+  }
+
+  .sortBySpan{
+      padding-right: 30px;
+      color: #555555;
   }

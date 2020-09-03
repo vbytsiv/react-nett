@@ -1,6 +1,16 @@
 .App {
-  
+  background-color: #555555;
+  display: flex; 
+  justify-content: center;
 }
 
+.columnMain {
+    width: 80%;
+    color: #FFFFFF;
+    max-width: 1180px;
+  }
 
-
+.header{
+    margin-bottom: 10px;
+}
+ 

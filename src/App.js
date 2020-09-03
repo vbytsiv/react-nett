@@ -7,8 +7,12 @@ import {genres, movies, sortBy} from './data.js';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <MoviesMain movies={movies} genres={genres} sortBy={sortBy} />
+
+      <div className="columnMain">
+        <Header className="header"/>        
+        <MoviesMain movies={movies} genres={genres} sortBy={sortBy} />
+      </div>
+
     </div>
   );
 }

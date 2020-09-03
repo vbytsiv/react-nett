@@ -1,21 +1,27 @@
 import React from 'react';
+import './Header.css';
+import logo from './../img/logo.png';
 
-const AddMovie = (props) => (
-    <button>+ ADD MOVIE</button>
-)
 
 const SearchMovie = (props) => (
-    <div>
-        <span>FIND YOUR MOVIE</span>
-        <input type="text" />
-        <button>Search</button>
+    <div className="search" >
+        <span className="findYourMovieSpan">FIND YOUR MOVIE</span>
+        <div className="searchTextBoxAndButton">
+            <input type="text" className="searchMovieTextBox" />
+            <button className="searchMovieButton">SEARCH</button>
+        </div>
     </div>
 )
 
 const Header = (props) => (
-<div>
-    <AddMovie />
-    <SearchMovie />
+<div className="header">
+    <div className="headerContent">
+        <div className="logoAndButton">
+            <img src={logo} />
+            <button className="addMovieButton">+ ADD MOVIE</button>
+        </div>
+        <SearchMovie />
+    </div>
 </div>
 )
 
