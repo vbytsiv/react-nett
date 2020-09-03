@@ -50,4 +50,16 @@ export let movies = [
     }
   ];
   
-  export let sortBy = ["RELEASE DATE", "TITLE", "GENRE"];
+  export let sortBy = [
+    {
+        name: "RELEASE DATE",
+        value: 0
+    },
+    {
+        name: "TITLE",
+        value: 1
+    },
+    {
+        name: "GENRE",
+        value: 2
+    }];
