@@ -1,0 +1,23 @@
+.textBox{
+    margin-right: 10px;
+    font-size: 40px;
+    background-color: #1c1c1c;
+    border: 0;
+}
+
+.addMovie{
+    display: flex;
+    flex-flow: column;
+    background-color: #424242;
+    padding: 50px 50px 50px 50px;
+}
+
+.addMovie span{
+    color: #F65261;
+    font-size: 19px;
+}
+.addMovie #addMovieSpan{
+    font-size: 30px;
+    padding-bottom: 40px;
+    color:white;
+}
