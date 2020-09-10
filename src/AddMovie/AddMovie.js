@@ -1,11 +1,6 @@
 import React from 'react';
 import './AddMovie.css';
 
-const styles = {
-    fontFamily: "sans-serif",
-    textAlign: "center"
-  };
-
 class AddMovie extends React.Component{
     constructor(props){
         super(props);

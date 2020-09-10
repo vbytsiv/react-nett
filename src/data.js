@@ -2,32 +2,32 @@ export let movies = [
     {
       "title":"Pulp Fiction",
       "date":"2004",
-      "genreid": 0
+      "genreId": 1
     },
     {
       "title":"Bohemian Rapsody",
       "date":"2003",
-      "genreid": 2
+      "genreId": 2
     },
     {
       "title":"Bill: Vol 2",
       "date":"1994",
-      "genreid":3
+      "genreId":3
     },
     {
       "title":"Avangers, War of Infinity",
       "date":"2004",
-      "genreid": 1
+      "genreId": 1
     },
     {
       "title":"Inception",
       "date":"2003",
-      "genreid": 1
+      "genreId": 1
     },
     {
       "title":"Reservoir dogs",
       "date":"1994",
-      "genreid": 3
+      "genreId": 3
     },
   ];
   
