@@ -76,7 +76,9 @@ class Filters extends React.Component {
 
 const Counter = (props) => 
 (
-    <div className="counter"><b>{props.count}</b> movies found</div> 
+  <div className="counter">
+    <b>{props.count}</b> {props.count > 1 ? "movies" : "movie"} found
+  </div> 
 );
 
 const MoviesPalette = (props) => 
