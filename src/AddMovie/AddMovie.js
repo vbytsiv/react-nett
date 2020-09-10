@@ -48,8 +48,10 @@ class AddMovie extends React.Component{
                 <input type="text" className="textBox"/>
                 <span>RUNTIME</span>
                 <input type="text" className="textBox"/>
-                <button>RESET</button>
-                <button>SUBMIT</button>
+                <div className="buttons">
+                    <button className="resetButton">RESET</button>
+                    <button className="submitButton">SUBMIT</button>
+                </div>
             </div>
         );
     }
