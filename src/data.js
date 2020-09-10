@@ -53,13 +53,13 @@ export let movies = [
   export let sortBy = [
     {
         name: "RELEASE DATE",
-        value: 0
+        value: "RELEASE_DATE"
     },
     {
         name: "TITLE",
-        value: 1
+        value: "TITLE"
     },
     {
         name: "GENRE",
-        value: 2
+        value: "GENRE"
     }];
