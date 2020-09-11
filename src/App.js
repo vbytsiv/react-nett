@@ -9,7 +9,7 @@ function App() {
     <div className="App">
 
       <div className="columnMain">
-        <Header className="header"/>        
+        <Header className="header" genres={genres}/>        
         <MoviesMain movies={movies} genres={genres} sortBy={sortBy} />
       </div>
 

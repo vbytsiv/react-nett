@@ -38,7 +38,7 @@ class Header extends React.Component{
                 </div>
                 <SearchMovie />
                 <Modal show={this.state.open} handleClose={this.closeModal}>
-                    <AddMovie />
+                    <AddMovie genres={this.props.genres} />
                 </Modal>
             </div>
         </div>);
