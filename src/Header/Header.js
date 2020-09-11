@@ -1,8 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 import logo from './../img/logo.png';
-import Modal from './../Modal/Modal.js';
-import AddMovie from './../AddMovie/AddMovie.js';
 
 const SearchMovie = (props) => (
     <div className="search" >
@@ -14,19 +13,10 @@ const SearchMovie = (props) => (
     </div>
 )
 
-class Header extends React.Component{
+class Header extends React.Component {
     constructor(props){
         super(props);
-        this.state = {open: false};
     }
-
-    openModal = () => {
-        this.setState({ open: true });
-    };
-
-    closeModal = () => {
-        this.setState({ open: false });
-    };
 
     render() {
         return(
@@ -34,14 +24,16 @@ class Header extends React.Component{
             <div className="headerContent">
                 <div className="logoAndButton">
                     <img src={logo} />
-                    <button className="addMovieButton" onClick={this.openModal}>+ ADD MOVIE</button>
+                    <button className="addMovieButton" onClick={this.props.handleAddMovie}>+ ADD MOVIE</button>
                 </div>
                 <SearchMovie />
-                <Modal show={this.state.open} handleClose={this.closeModal}>
-                    <AddMovie genres={this.props.genres} />
-                </Modal>
             </div>
         </div>);
         }
     }
+
+Header.propTypes = {
+    handleAddMovie : PropTypes.func.isRequired
+}
+
 export default Header;

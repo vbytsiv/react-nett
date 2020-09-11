@@ -1,32 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './AddMovie.css';
+import { movies } from '../data';
 
-class AddMovie extends React.Component{
+class AddMovie extends React.Component {
     constructor(props){
         super(props);
-        this.state = {open: false};
-    }
-
-    setInitialState = () => {
-        this.setState(
-            {
+        this.state = {};
+        this.state = {            
                 title: '',
                 date: '',
                 url: '',
                 genreId: null,
                 overview: '',
                 runtime: ''
-            });
+            
+        }
     }
 
-    onOpenModal = () => {
-        this.setState({ open: true });
-    };
-
-    onCloseModal = () => {
-        this.setState({ open: false });
-    };
+    setInitialState = () => {
+        this.setState({
+                title: '',
+                date: '',
+                url: '',
+                genreId: null,
+                overview: '',
+                runtime: ''            
+        });
+    }
     
     render() {
         return (
@@ -39,7 +40,7 @@ class AddMovie extends React.Component{
                 <span>MOVIE URL</span>
                 <input type="text" className="textBox" onChange={e => this.setState({url: e.target.value})}  value={this.state.url} />
                 <span>GENRE</span>
-                <select onChange={e => this.setState({genre: e.target.value})}>
+                <select onChange={e => this.setState({genreId: e.target.value})}>
                     {this.props.genres.map(x => (<option value={x.id}>{x.name}</option>))}
                 </select>
                 <span>OVERVIEW</span>
@@ -48,7 +49,15 @@ class AddMovie extends React.Component{
                 <input type="text" className="textBox" onChange={e => this.setState({runtime: e.target.value})}  value={this.state.runtime} />
                 <div className="buttons">
                     <button className="resetButton" onClick={this.setInitialState}>RESET</button>
-                    <button className="submitButton">SUBMIT</button>
+                    <button className="submitButton" onClick={() => this.props.handleMovieAdded(
+                        {            
+                            title: this.state.title,
+                            date: this.state.date,
+                            url: this.state.url,
+                            genreId: this.state.genreId,
+                            overview: this.state.overview,
+                            runtime: this.state.runtime
+                        })}>SUBMIT</button>
                 </div>
             </div>
         );
@@ -56,7 +65,8 @@ class AddMovie extends React.Component{
 }
 
 AddMovie.propTypes = {
-    genres: PropTypes.array
+    genres: PropTypes.array.isRequired,
+    handleMovieAdded: PropTypes.func.isRequired
 }
 
 export default AddMovie;
